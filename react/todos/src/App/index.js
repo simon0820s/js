@@ -1,5 +1,4 @@
 import React from 'react';
-<<<<<<< HEAD
 import { useTodos } from './useTodos';
 import { TodoHeader } from '../TodoHeader';
 import { TodoCounter } from '../TodoCounter';
@@ -45,26 +44,11 @@ function App() {
       <TodoList
         error={error}
         loading={loading}
-        totalTodos={totalTodos}
         searchedTodos={searchedTodos}
-        searchText={searchValue}
         onError={() => <TodosError />}
         onLoading={() => <TodosLoading />}
         onEmptyTodos={() => <EmptyTodos />}
-        onEmptySearchResults={
-          (searchText) => <p>No hay resultados para {searchText}</p>
-        }
-        // render={todo => (
-        //   <TodoItem
-        //     key={todo.text}
-        //     text={todo.text}
-        //     completed={todo.completed}
-        //     onComplete={() => completeTodo(todo.text)}
-        //     onDelete={() => deleteTodo(todo.text)}
-        //   />
-        // )}
-      >
-        {todo => (
+        render={todo => (
           <TodoItem
             key={todo.text}
             text={todo.text}
@@ -73,7 +57,7 @@ function App() {
             onDelete={() => deleteTodo(todo.text)}
           />
         )}
-      </TodoList>
+      />
 
       {!!openModal && (
         <Modal>
@@ -88,16 +72,6 @@ function App() {
         setOpenModal={setOpenModal}
       />
     </React.Fragment>
-=======
-import { TodoProvider } from '../TodoContext';
-import { AppUI } from './AppUI';
-
-function App() {
-  return (
-    <TodoProvider>
-      <AppUI />
-    </TodoProvider>
->>>>>>> 9cedac019881a83087342ae7aec8697dc957bf8d
   );
 }
 
